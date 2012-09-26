@@ -60,12 +60,12 @@ public class MargaretWebConnection extends Thread {
 	
 	}
 	
-	public MargaretWebConnection(int port, String address) {
+	public MargaretWebConnection(int port, String address, String coresite, String hdfssite) {
 		this.port = port;
 		this.address = address;
 		conf = new Configuration();
-	    conf.addResource(new Path("/opt/hadoop/conf/core-site.xml"));
-	    conf.addResource(new Path("/opt/hadoop/conf/hdfs-site.xml"));
+	    conf.addResource(new Path(coresite));
+	    conf.addResource(new Path(hdfssite));
 	    try {
 			dfs = FileSystem.get(conf);
 		} catch (IOException e) {

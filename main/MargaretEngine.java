@@ -8,7 +8,7 @@ public class MargaretEngine {
 	 */
 	public static void main(String[] args) {
 		String address = args[0];
-		MargaretWebConnection web = new MargaretWebConnection(args[1],address);
+		MargaretWebConnection web = new MargaretWebConnection(args[1],address,args[2],args[3]);
 		web.start();
 	}
 
